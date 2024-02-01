@@ -12,10 +12,6 @@ namespace Octo {
 
     void Application::Run()
     {
-        while (true)
-        {
-            /* code */
-        }
-        
+        while (true);
     }
 }
