@@ -5,5 +5,5 @@
 - [x] Create a basic project structure
 - [x] Entry point
 - [x] Logging
-- [ ] Event system
+- [x] Event system
 - [ ] Rendering with OpenGL

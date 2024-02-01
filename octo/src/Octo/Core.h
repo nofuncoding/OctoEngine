@@ -17,3 +17,5 @@
 #else
 #   error "Octo Engine is not supported on your platform"
 #endif
+
+#define BIT(x) (1 << x)
