@@ -21,7 +21,12 @@ target("octo")
     -- build config (disabled now)
     -- add_includedirs("$(buildir)")
     -- add_configfiles("octo/src/BuildConfig.h.in")
-    add_files("octo/src/**.cpp")
+
+    octo_src = "octo/src/"
+
+    add_includedirs(octo_src)
+    set_pcxxheader(octo_src .. "octo_pch.h")
+    add_files(octo_src .. "**.cpp")
 
     if is_mode("debug") then 
         add_defines("OCTO_DEBUG")
