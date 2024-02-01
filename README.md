@@ -21,7 +21,7 @@ Currently, Octo Engine *only* supports Windows.
 1. Clone the repository: `git clone https://github.com/nofuncoding/OctoEngine.git`, or just download the source code and extract it.
 2. Run the following commands:
 ```bash
-xmake f # Configure the project up
+xmake f -y # Configure the project up
 xmake # Build the whole project
 xmake run sandbox # Run the sandbox application to test the engine
 ```
