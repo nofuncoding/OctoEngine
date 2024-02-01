@@ -21,7 +21,20 @@ target("octo")
     -- build config (disabled now)
     -- add_includedirs("$(buildir)")
     -- add_configfiles("octo/src/BuildConfig.h.in")
-    add_files("octo/src/*.cpp", "octo/src/**/*.cpp")
+    add_files("octo/src/**.cpp")
+
+    if is_mode("debug") then 
+        add_defines("OCTO_DEBUG")
+    elseif is_mode("release") then 
+        add_defines("OCTO_RELEASE")
+    --[[elseif is_mode("dist") then
+        add_defines("OCTO_DIST")]]
+    end
+
+    after_build(function (target) 
+        os.cp("$(projectdir)/LICENSE", target:targetdir())
+        os.cp("$(projectdir)/COPYRIGHT", target:targetdir())
+    end)
 
 target("sandbox")
     add_deps("octo")
