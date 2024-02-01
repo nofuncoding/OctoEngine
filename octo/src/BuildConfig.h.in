@@ -1,0 +1,13 @@
+#define BUILD_VERSION       "${VERSION}"
+#define BUILD_VERSION_MAJOR ${VERSION_MAJOR}
+#define BUILD_VERSION_MINOR ${VERSION_MINOR}
+#define BUILD_VERSION_ALTER ${VERSION_ALTER}
+#define BUILD_VERSION_BUILD ${VERSION_BUILD}
+
+#define BUILD_PLATFORM      "${PLAT}"
+#define BUILD_OS            "${OS}"
+#define BUILD_ARCH          "${ARCH}"
+
+#define GIT_COMMIT          "${GIT_COMMIT}"
+#define GIT_BRANCH          "${GIT_BRANCH}"
+#define GIT_TAG             "${GIT_TAG}"
