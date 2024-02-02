@@ -1,3 +1,4 @@
+#include "octo_pch.h"
 #include "Application.h"
 
 namespace Octo {
