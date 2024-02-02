@@ -5,6 +5,8 @@
 #include "Octo/Events/MouseEvent.h"
 #include "Octo/Events/KeyEvent.h"
 
+#include <glad/gl.h>
+
 namespace Octo {
 
     static bool s_GLFWInitialized = false;
@@ -32,6 +34,11 @@ namespace Octo {
 
         OCTO_CORE_INFO("Creating window {0} ({1}, {2})", properties.Title, properties.Width, properties.Height);
 
+        // Use OpenGL Core 3.3
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
         if (!s_GLFWInitialized)
         {
             OCTO_CORE_INFO("Initializing GLFW");
@@ -49,6 +56,10 @@ namespace Octo {
         // Setup a glfw window
         m_Window = glfwCreateWindow(static_cast<int>(properties.Width), static_cast<int>(properties.Height), m_Data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+
+        int version = gladLoadGL(glfwGetProcAddress);
+        OCTO_CORE_INFO("Loaded OpenGL {0}.{1}", GLAD_VERSION_MAJOR(version), GLAD_VERSION_MINOR(version));
+
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(properties.VSync);
 

@@ -10,6 +10,11 @@ Copyright: 2016 Gabi Melman
 
 Comment: glfw
 Source: https://github.com/glfw/glfw
-License: zlib
+License: Zlib
 Copyright: 2002-2006 Marcus Geelnard
 2006-2019 Camilla Löwy
+
+Comment: glad
+Source: https://github.com/Dav1dde/glad
+License: Expat
+Copyright: 2013-2022 David Herberth

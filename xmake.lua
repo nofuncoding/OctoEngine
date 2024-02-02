@@ -8,6 +8,8 @@ add_rules("mode.release", "mode.debug")
 
 -- Packages
 
+includes("octo/thirdparty")
+
 -- FIXME: glfw have a problem in gcc
 package("glfw")
     set_homepage("https://www.glfw.org/")
@@ -83,12 +85,13 @@ target("octo")
     add_defines("OCTO_BUILD_SHARED")
 
     add_packages("spdlog", "glfw")
+    add_deps("glad")
 
     -- build config (disabled now)
     -- add_includedirs("$(buildir)")
     -- add_configfiles("octo/src/BuildConfig.h.in")
 
-    octo_src = "octo/src/"
+    octo_src = "$(projectdir)/octo/src/"
 
     add_includedirs(octo_src)
     set_pcxxheader(octo_src .. "octo_pch.h")
