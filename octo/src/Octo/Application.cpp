@@ -21,12 +21,35 @@ namespace Octo {
         dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(OnWindowClose));
 
         OCTO_CORE_TRACE("{0}", event);
+
+        for (auto iterator = m_LayerStack.rbegin(); iterator != m_LayerStack.rend(); ++iterator)
+        {
+            if (event.Handled)
+                break;
+
+            (*iterator)->OnEvent(event);
+        }
+    }
+
+    void Application::PushLayer(Layer* layer)
+    {
+        m_LayerStack.PushLayer(layer);
+        layer->OnAttach();
+    }
+
+    void Application::PushOverlay(Layer* layer)
+    {
+        m_LayerStack.PushOverlay(layer);
+        layer->OnAttach();
     }
 
     void Application::Run()
     {
         while (m_Running)
         {
+            for (Layer* layer : m_LayerStack)
+                layer->OnUpdate();
+
             m_Window->OnUpdate();
         }
     }
