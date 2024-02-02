@@ -4,6 +4,7 @@ namespace Octo {
 
     Application::Application()
     {
+        m_Window = std::unique_ptr<Window>(Window::Create());
     }
 
     Application::~Application()
@@ -12,6 +13,9 @@ namespace Octo {
 
     void Application::Run()
     {
-        while (true);
+        while (m_Running)
+        {
+            m_Window->OnUpdate();
+        }
     }
 }
