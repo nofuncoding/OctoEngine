@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-
+#include "Octo/Log.h"
 
 #ifdef _WIN32
 #   include <Windows.h>
