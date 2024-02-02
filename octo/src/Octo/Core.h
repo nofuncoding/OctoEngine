@@ -18,4 +18,12 @@
 #   error "Octo Engine is not supported on your platform"
 #endif
 
+#ifdef OCTO_ENABLE_ASSERTS
+#   define OCTO_ASSERT(x, ...) { if(!(x)) { OCTO_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#   define OCTO_CORE_ASSERT(x, ...) { if(!(x)) { OCTO_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+#   define OCTO_ASSERT(x, ...)
+#   define OCTO_CORE_ASSERT(x, ...)
+#endif
+
 #define BIT(x) (1 << x)

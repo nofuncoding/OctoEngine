@@ -94,7 +94,7 @@ target("octo")
     add_files(octo_src .. "**.cpp")
 
     if is_mode("debug") then 
-        add_defines("OCTO_DEBUG")
+        add_defines("OCTO_DEBUG", "OCTO_ENABLE_ASSERTS")
     elseif is_mode("release") then 
         add_defines("OCTO_RELEASE")
     --[[elseif is_mode("dist") then
