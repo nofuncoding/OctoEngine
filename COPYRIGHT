@@ -1,7 +1,15 @@
-NOTE: This file is not using the debain/copyright format
-
-OctoEngine (https://github.com/nofuncoding/OctoEngine)
+Comment: OctoEngine 
+Source: https://github.com/nofuncoding/OctoEngine
 License: Expat
+Copyright: 2024 NoFun
 
-spdlog (https://github.com/gabime/spdlog)
+Comment: spdlog
+Source: https://github.com/gabime/spdlog
 License: Expat
+Copyright: 2016 Gabi Melman
+
+Comment: glfw
+Source: https://github.com/glfw/glfw
+License: zlib
+Copyright: 2002-2006 Marcus Geelnard
+2006-2019 Camilla Löwy
